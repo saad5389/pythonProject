@@ -2,6 +2,7 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import ratingAssingment2
 
 
 def print_hi(name):
@@ -11,6 +12,11 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    # print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    userinput = float(input("Enter rating between 0 to 5: "))
+    r = ratingAssingment2.Rating(userinput)
+    while not r.validateRating(userinput):
+        userinput = float(input("Enter rating between 0 to 5: "))
+        r = ratingAssingment2.Rating(userinput)
+    print(r.getRating())
